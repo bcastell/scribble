@@ -34,11 +34,11 @@ body {
 	height: 48px;
 	margin-top: 30px;
 	display: block;
-	background: url(../images/github.svg);
+	background: url(../images/github/github.svg);
 }
 
 .git-icon:hover {
-	background: url(../images/github-hover.svg);
+	background: url(../images/github/github-hover.svg);
 }
 
 .header-line {
@@ -93,99 +93,99 @@ input[type="radio"] + label {
 }
 
 input[type="radio"] + label.pencil {
-	background: url(../images/draw-off.svg);
+	background: url(../images/draw/draw-off.svg);
 }
 
 input[type="radio"]:checked + label.pencil {
-	background: url(../images/draw-on.svg);
+	background: url(../images/draw/draw-on.svg);
 }
 
 input[type="radio"]:hover + label.pencil {
-	background: url(../images/draw-hover.svg);
+	background: url(../images/draw/draw-hover.svg);
 }
 
 input[type="radio"] + label.line {
-	background: url(../images/line-off.svg);
+	background: url(../images/line/line-off.svg);
 }
 
 input[type="radio"]:checked + label.line {
-	background: url(../images/line-on.svg);
+	background: url(../images/line/line-on.svg);
 }
 
 input[type="radio"]:hover + label.line {
-	background: url(../images/line-hover.svg);
+	background: url(../images/line/line-hover.svg);
 }
 
 input[type="radio"] + label.erase {
-	background: url(../images/erase-off.svg);
+	background: url(../images/erase/erase-off.svg);
 }
 
 input[type="radio"]:checked + label.erase {
-	background: url(../images/erase-on.svg);
+	background: url(../images/erase/erase-on.svg);
 }
 
 input[type="radio"]:hover + label.erase {
-	background: url(../images/erase-hover.svg);
+	background: url(../images/erase/erase-hover.svg);
 }
 
 input[type="radio"] + label.text {
-	background: url(../images/text-off.svg);
+	background: url(../images/text/text-off.svg);
 }
 
 input[type="radio"]:checked + label.text {
-	background: url(../images/text-on.svg);
+	background: url(../images/text/text-on.svg);
 }
 
 input[type="radio"]:hover + label.text {
-	background: url(../images/text-hover.svg);
+	background: url(../images/text/text-hover.svg);
 }
 
 input[type="radio"] + label.spray {
-	background: url(../images/spray-off.svg);
+	background: url(../images/spray/spray-off.svg);
 }
 
 input[type="radio"]:checked + label.spray {
-	background: url(../images/spray-on.svg);
+	background: url(../images/spray/spray-on.svg);
 }
 
 input[type="radio"]:hover + label.spray {
-	background: url(../images/spray-hover.svg);
+	background: url(../images/spray/spray-hover.svg);
 }
 
 input[type="radio"] + label.fill {
-	background: url(../images/fill-off.svg);
+	background: url(../images/fill/fill-off.svg);
 }
 
 input[type="radio"]:checked + label.fill {
-	background: url(../images/fill-on.svg);
+	background: url(../images/fill/fill-on.svg);
 }
 
 input[type="radio"]:hover + label.fill {
-	background: url(../images/fill-hover.svg);
+	background: url(../images/fill/fill-hover.svg);
 }
 
 input[type="radio"] + label.rectangle {
-	background: url(../images/rectangle-off.svg);
+	background: url(../images/rectangle/rectangle-off.svg);
 }
 
 input[type="radio"]:checked + label.rectangle {
-	background: url(../images/rectangle-on.svg);
+	background: url(../images/rectangle/rectangle-on.svg);
 }
 
 input[type="radio"]:hover + label.rectangle {
-	background: url(../images/rectangle-hover.svg);
+	background: url(../images/rectangle/rectangle-hover.svg);
 }
 
 input[type="radio"] + label.circle {
-	background: url(../images/circle-off.svg);
+	background: url(../images/circle/circle-off.svg);
 }
 
 input[type="radio"]:checked + label.circle {
-	background: url(../images/circle-on.svg);
+	background: url(../images/circle/circle-on.svg);
 }
 
 input[type="radio"]:hover + label.circle {
-	background: url(../images/circle-hover.svg);
+	background: url(../images/circle/circle-hover.svg);
 }
 
 .color-picker {
@@ -227,7 +227,7 @@ input[type="radio"]:hover + label.circle {
 }
 
 .open {
-	background-image: url(../images/open-file-off.svg);
+	background-image: url(../images/open-file/open-file-off.svg);
 	width: 16px;
 	height: 16px;
 	margin-right: 8px;
@@ -236,7 +236,7 @@ input[type="radio"]:hover + label.circle {
 
 label:hover > span,
 .input-file:focus + label > span {
-	background-image: url(../images/open-file-on.svg);
+	background-image: url(../images/open-file/open-file-on.svg);
 }
 
 .footer {
