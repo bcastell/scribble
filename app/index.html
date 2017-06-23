@@ -3,9 +3,123 @@
 	<head>
 		<title>Scribble</title>
 		<!--build:css css/styles.min.css-->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed">
 		<!--endbuild-->
 	</head>
 	<body>
+		<div class="container">
+			<div class="row header">
+				<div class="col-md-1">
+					<img src="images/pencil.svg" alt="Pencil" class="img-responsive center-block top-icon">
+				</div>
+				<div class="col-md-10">
+					<h1>Scribble</h1>
+					<p class="author">by Brandon Castellanos</p>
+				</div>
+				<div class="col-md-1">
+					<a href="https://github.com/bcastell/scribble" class="git-icon"></a>
+				</div>
+			</div>
+			<div class="row header-line"></div>
+			<div class="row toolbar text-center">
+				<div class="col-md-2">
+					<h4>Tools</h4>
+					<div class="tool-break"></div>
+					<div class="row">
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="pencil">
+							<label for="pencil" class="pencil"></label>
+						</div>
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="line">
+							<label for="line" class="line"></label>
+						</div>
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="erase">
+							<label for="erase" class="erase"></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="text">
+							<label for="text" class="text"></label>
+						</div>
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="spray">
+							<label for="spray" class="spray"></label>
+						</div>
+						<div class="col-md-4">
+							<input type="radio" name="tools" id="fill">
+							<label for="fill" class="fill"></label>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<h4>Shapes</h4>
+					<div class="tool-break"></div>
+					<div class="row">
+						<div class="col-md-6">
+							<input type="radio" name="tools" id="rectangle">
+							<label for="rectangle" class="rectangle pull-right"></label>
+						</div>
+						<div class="col-md-6">
+							<input type="radio" name="tools" id="circle">
+							<label for="circle" class="circle pull-left"></label>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<h4>Color</h4>
+					<div class="tool-break"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<input type="color" name="picker" value="#000000" class="color-picker">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<h4>Size</h4>
+					<div class="tool-break"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<input type="number" id="size" class="size-picker">
+							<label for="size">px</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h4>File</h4>
+					<div class="tool-break"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<input type="file" name="file" id="open-file" class="input-file">
+							<label for="open-file"><span class="open"></span>Choose a file...</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="cv-line"></div>
+				</div>
+			</div>
+			<div class="row board">
+				<div class="col-md-12">
+					<canvas id="cv"></canvas>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="cv-line"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="footer"></div>
+			</div>
+		</div>
 		<!--build:js js/main.min.js-->
 		<!--endbuild-->
 	</body>

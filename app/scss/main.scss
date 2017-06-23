@@ -1,0 +1,246 @@
+$header-background-color: #2f3241;
+$header-text-color: #74b1be;
+$header-font: "Quantico", cursive;
+
+$toolbar-background-color: #2b2e3b;
+$toolbar-text-color: #9feaf9;
+$toolbar-font: "Fira Sans Extra Condensed", sans-serif;
+
+$board-background-color: #e0e5e6;
+
+$canvas-width: 600px;
+$canvas-height: 400px;
+
+body {
+	background-color: $header-text-color;
+}
+
+.header {
+	background-color: $header-background-color;
+	color: $header-text-color;
+	font-family: $header-font;
+}
+
+.author {
+	margin-bottom: 20px;
+}
+
+.top-icon {
+	margin-top: 30px;
+}
+
+.git-icon {
+	width: 48px;
+	height: 48px;
+	margin-top: 30px;
+	display: block;
+	background: url(../images/github.svg);
+}
+
+.git-icon:hover {
+	background: url(../images/github-hover.svg);
+}
+
+.header-line {
+	height: 1px;
+	background-color: black;
+}
+
+.cv-line {
+	height: 20px;
+	background-color: black;
+}
+
+.toolbar {
+	background-color: $toolbar-background-color;
+	color: $toolbar-text-color;
+	font-family: $toolbar-font;
+}
+
+.tool-break {
+	width: 100%;
+	height: 1px;
+	background-color: $header-text-color;
+	margin: 0 auto;
+}
+
+.board {
+	background-color: $board-background-color;
+}
+
+#cv {
+	width: $canvas-width;
+	height: $canvas-height;
+	background: white;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + label {
+	height: 24px;
+	width: 24px;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	margin-top: 8px;
+	cursor: pointer;
+}
+
+input[type="radio"] + label.pencil {
+	background: url(../images/draw-off.svg);
+}
+
+input[type="radio"]:checked + label.pencil {
+	background: url(../images/draw-on.svg);
+}
+
+input[type="radio"]:hover + label.pencil {
+	background: url(../images/draw-hover.svg);
+}
+
+input[type="radio"] + label.line {
+	background: url(../images/line-off.svg);
+}
+
+input[type="radio"]:checked + label.line {
+	background: url(../images/line-on.svg);
+}
+
+input[type="radio"]:hover + label.line {
+	background: url(../images/line-hover.svg);
+}
+
+input[type="radio"] + label.erase {
+	background: url(../images/erase-off.svg);
+}
+
+input[type="radio"]:checked + label.erase {
+	background: url(../images/erase-on.svg);
+}
+
+input[type="radio"]:hover + label.erase {
+	background: url(../images/erase-hover.svg);
+}
+
+input[type="radio"] + label.text {
+	background: url(../images/text-off.svg);
+}
+
+input[type="radio"]:checked + label.text {
+	background: url(../images/text-on.svg);
+}
+
+input[type="radio"]:hover + label.text {
+	background: url(../images/text-hover.svg);
+}
+
+input[type="radio"] + label.spray {
+	background: url(../images/spray-off.svg);
+}
+
+input[type="radio"]:checked + label.spray {
+	background: url(../images/spray-on.svg);
+}
+
+input[type="radio"]:hover + label.spray {
+	background: url(../images/spray-hover.svg);
+}
+
+input[type="radio"] + label.fill {
+	background: url(../images/fill-off.svg);
+}
+
+input[type="radio"]:checked + label.fill {
+	background: url(../images/fill-on.svg);
+}
+
+input[type="radio"]:hover + label.fill {
+	background: url(../images/fill-hover.svg);
+}
+
+input[type="radio"] + label.rectangle {
+	background: url(../images/rectangle-off.svg);
+}
+
+input[type="radio"]:checked + label.rectangle {
+	background: url(../images/rectangle-on.svg);
+}
+
+input[type="radio"]:hover + label.rectangle {
+	background: url(../images/rectangle-hover.svg);
+}
+
+input[type="radio"] + label.circle {
+	background: url(../images/circle-off.svg);
+}
+
+input[type="radio"]:checked + label.circle {
+	background: url(../images/circle-on.svg);
+}
+
+input[type="radio"]:hover + label.circle {
+	background: url(../images/circle-hover.svg);
+}
+
+.color-picker {
+	margin-top: 8px;
+}
+
+.size-picker {
+	color: $header-text-color;
+	width: 25%;
+	margin-top: 8px;
+}
+
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file + label {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: $header-text-color;
+	background-color: white;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 8px;
+	padding: 6px 12px 6px 12px;
+	border-radius: 6px;
+}
+
+.input-file:focus + label,
+.input-file + label:hover {
+	color: white;
+	background-color: $header-text-color;
+	box-shadow: 0 0 1.5pt 1.5pt #7fffd4;
+}
+
+.open {
+	background-image: url(../images/open-file-off.svg);
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	display: inline-block;
+}
+
+label:hover > span,
+.input-file:focus + label > span {
+	background-image: url(../images/open-file-on.svg);
+}
+
+.footer {
+	height: 40px;
+	background-color: $toolbar-background-color;
+}
+
