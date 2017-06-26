@@ -76,7 +76,7 @@
 					<div class="tool-break"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<input type="color" name="picker" value="#000000" class="color-picker">
+							<input type="color" name="picker" value="#000000" id="picker">
 						</div>
 					</div>
 				</div>
@@ -94,9 +94,15 @@
 					<h4>File</h4>
 					<div class="tool-break"></div>
 					<div class="row">
-						<div class="col-md-12">
-							<input type="file" name="file" id="open-file" class="input-file">
-							<label for="open-file"><span class="open"></span>Choose a file...</label>
+						<div class="col-md-6">
+							<input type="file" name="file" id="open_file" class="choose">
+							<label for="open_file"><span class="open"></span>Choose a file...</label>
+						</div>
+						<div class="col-md-6">
+							<a href="/" id="save_file" class="testing">
+								<span class="save"></span>
+								Save canvas...
+							</a>
 						</div>
 					</div>
 				</div>
@@ -108,7 +114,8 @@
 			</div>
 			<div class="row board">
 				<div class="col-md-12">
-					<canvas id="cv"></canvas>
+					<canvas id="cv" width="600" height="400"></canvas>
+					<canvas id="dcv" width="600" height="400"></canvas>
 				</div>
 			</div>
 			<div class="row">
@@ -121,6 +128,7 @@
 			</div>
 		</div>
 		<!--build:js js/main.min.js-->
+		<script src="js/index.js"></script>
 		<!--endbuild-->
 	</body>
 </html>

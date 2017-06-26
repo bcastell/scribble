@@ -8,9 +8,6 @@ $toolbar-font: "Fira Sans Extra Condensed", sans-serif;
 
 $board-background-color: #e0e5e6;
 
-$canvas-width: 600px;
-$canvas-height: 400px;
-
 body {
 	background-color: $header-text-color;
 }
@@ -69,14 +66,26 @@ body {
 }
 
 #cv {
-	width: $canvas-width;
-	height: $canvas-height;
 	background: white;
 	padding-left: 0;
 	padding-right: 0;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+
+#dcv {
+	position: absolute;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 input[type="radio"] {
@@ -188,7 +197,7 @@ input[type="radio"]:hover + label.circle {
 	background: url(../images/circle/circle-hover.svg);
 }
 
-.color-picker {
+#picker {
 	margin-top: 8px;
 }
 
@@ -198,7 +207,7 @@ input[type="radio"]:hover + label.circle {
 	margin-top: 8px;
 }
 
-.input-file {
+.choose {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -207,7 +216,7 @@ input[type="radio"]:hover + label.circle {
 	z-index: -1;
 }
 
-.input-file + label {
+.choose + label {
 	font-size: 1.25em;
 	font-weight: 700;
 	color: $header-text-color;
@@ -219,8 +228,8 @@ input[type="radio"]:hover + label.circle {
 	border-radius: 6px;
 }
 
-.input-file:focus + label,
-.input-file + label:hover {
+.choose:focus + label,
+.choose + label:hover {
 	color: white;
 	background-color: $header-text-color;
 	box-shadow: 0 0 1.5pt 1.5pt #7fffd4;
@@ -235,8 +244,41 @@ input[type="radio"]:hover + label.circle {
 }
 
 label:hover > span,
-.input-file:focus + label > span {
+.choose:focus + label > span {
 	background-image: url(../images/open-file/open-file-on.svg);
+}
+
+.testing {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: $header-text-color;
+	background-color: white;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 8px;
+	padding: 6px 12px 6px 12px;
+	border-radius: 6px;
+	text-decoration: none !important;
+}
+
+.testing:focus,
+.testing:hover {
+	color: white;
+	background-color: $header-text-color;
+	box-shadow: 0 0 1.5pt 1.5pt #7fffd4;
+}
+
+.save {
+	background-image: url(../images/save-file/save-file-off.svg);
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	display: inline-block;
+}
+
+a:hover > span,
+a:focus > span {
+	background-image: url(../images/save-file/save-file-on.svg);
 }
 
 .footer {
