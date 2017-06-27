@@ -6,25 +6,6 @@
 	background-image: url($image);
 }
 
-@mixin file-button {
-	width: 16px;
-	height: 16px;
-	margin-right: 8px;
-	display: inline-block;
-}
-
-@mixin file-outline {
-	font-size: 1.25em;
-	font-weight: 700;
-	color: $glacier;
-	background-color: white;
-	display: inline-block;
-	cursor: pointer;
-	margin-top: 8px;
-	padding: 6px 12px 6px 12px;
-	border-radius: 6px;
-}
-
 @mixin color-box($height, $color) {
 	height: $height;
 	background-color: $color;

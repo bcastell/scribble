@@ -12,7 +12,6 @@
 }
 
 .cv-line {
-	height: 20px;
-	background-color: black;
+	@include color-box(20px, black);
 }
 

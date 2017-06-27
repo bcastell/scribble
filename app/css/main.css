@@ -1107,7 +1107,11 @@ body {
   position: absolute;
   z-index: -1; }
 
-#open_file + label {
+#save_file {
+  text-decoration: none !important; }
+
+#open_file + label,
+#save_file {
   font-size: 1.25em;
   font-weight: 700;
   color: #74b1be;
@@ -1126,39 +1130,25 @@ body {
   background-color: #74b1be;
   box-shadow: 0 0 1.5pt 1.5pt #7fffd4; }
 
-.open {
-  background-image: url("../images/open-file/open-file-off.svg");
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  display: inline-block; }
-
 label:hover > span,
 #open_file:focus + label > span {
   background-image: url("../images/open-file/open-file-on.svg"); }
 
-#save_file {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: #74b1be;
-  background-color: white;
-  display: inline-block;
-  cursor: pointer;
-  margin-top: 8px;
-  padding: 6px 12px 6px 12px;
-  border-radius: 6px;
-  text-decoration: none !important; }
+a:hover > span,
+a:focus > span {
+  background-image: url("../images/save-file/save-file-on.svg"); }
 
-.save {
-  background-image: url("../images/save-file/save-file-off.svg");
+.open, .save {
   width: 16px;
   height: 16px;
   margin-right: 8px;
   display: inline-block; }
 
-a:hover > span,
-a:focus > span {
-  background-image: url("../images/save-file/save-file-on.svg"); }
+.open {
+  background-image: url("../images/open-file/open-file-off.svg"); }
+
+.save {
+  background-image: url("../images/save-file/save-file-off.svg"); }
 
 #cv, #dcv {
   padding-left: 0;
@@ -1189,8 +1179,8 @@ input[type="radio"] {
   display: none; }
 
 input[type="radio"] + label {
-  height: 24px;
   width: 24px;
+  height: 24px;
   display: inline-block;
   padding: 0 0 0 0px;
   margin-top: 8px;

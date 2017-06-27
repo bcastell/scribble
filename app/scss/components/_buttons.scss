@@ -19,8 +19,21 @@
 	z-index: -1;
 }
 
-#open_file + label {
-	@include file-outline;
+#save_file {
+	text-decoration: none !important;
+}
+
+#open_file + label,
+#save_file {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: $glacier;
+	background-color: white;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 8px;
+	padding: 6px 12px 6px 12px;
+	border-radius: 6px;
 }
 
 #open_file:focus + label,
@@ -32,28 +45,28 @@
 	box-shadow: 0 0 1.5pt 1.5pt $aquamarine;
 }
 
-.open {
-	@include background-image($open-file-off);
-	@include file-button;
-}
-
 label:hover > span,
 #open_file:focus + label > span {
 	@include background-image($open-file-on);
 }
 
-#save_file {
-	@include file-outline;
-	text-decoration: none !important;
+a:hover > span,
+a:focus > span {
+	@include background-image($save-file-on);
+}
+
+.open, .save {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+	display: inline-block;
+}
+
+.open {
+	@include background-image($open-file-off);
 }
 
 .save {
 	@include background-image($save-file-off);
-	@include file-button;
-}
-
-a:hover > span,
-a:focus > span {
-	@include background-image($save-file-on);
 }
 

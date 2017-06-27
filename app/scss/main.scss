@@ -1,27 +1,19 @@
 @charset 'UTF-8';
 
-// Abstracts
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
-// Vendors
 @import 'vendors/bootstrap.min';
 
-// Base
 @import 'base/base';
 
-// Layout
 @import 'layout/board';
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/toolbar';
 
-// Components
 @import 'components/buttons';
 @import 'components/canvas';
 @import 'components/pickers';
 @import 'components/radio';
 
-// Pages
-
-// Themes
