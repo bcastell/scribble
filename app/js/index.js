@@ -19,11 +19,8 @@ tools.line = function(event, cx) {
 
 	var dcx = dcv.getContext("2d");
 	dcx.lineWidth = document.getElementById("size").value;
-	dcx.fillStyle = document.getElementById("picker").value;
-	dcx.strokeStyle = document.getElementById("picker").value;
-	cx.lineWidth = dcx.lineWidth;
-	cx.fillStyle = dcx.fillStyle;
-	cx.strokeStyle = dcx.strokeStyle;
+	dcx.fillStyle = document.getElementById("color").value;
+	dcx.strokeStyle = document.getElementById("color").value;
 
 	var relativeStart = relativePos(event, cx.canvas);
 
@@ -132,8 +129,8 @@ tools.circle = function(event, cx) {
 
 	var dcx = dcv.getContext("2d");
 	dcx.lineWidth = document.getElementById("size").value;
-	dcx.fillStyle = document.getElementById("picker").value;
-	dcx.strokeStyle = document.getElementById("picker").value;
+	dcx.fillStyle = document.getElementById("color").value;
+	dcx.strokeStyle = document.getElementById("color").value;
 	cx.lineWidth = dcx.lineWidth;
 	cx.fillStyle = dcx.fillStyle;
 	cx.strokeStyle = dcx.strokeStyle;
@@ -178,8 +175,8 @@ tools.circle = function(event, cx) {
 	});
 };
 
-tools.picker = function(cx) {
-	var color = document.getElementById("picker");
+tools.color = function(cx) {
+	var color = document.getElementById("color");
 	color.addEventListener("change", function() {
 		cx.fillStyle = color.value;
 		cx.strokeStyle = color.value;
@@ -305,6 +302,7 @@ function scribble() {
 			}
 		}
 	});
+	tools["color"](cx);
 	tools["open_file"](cx);
 	tools["size"](cx);
 	tools["save_file"](cx);

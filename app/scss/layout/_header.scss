@@ -1,0 +1,17 @@
+.header {
+	background-color: $charade-light;
+	color: $glacier;
+	font-family: $quantico;
+}
+
+.img-pulldown {
+	margin-top: 30px;
+}
+
+.author {
+	margin-bottom: 20px;
+}
+
+.header-line {
+	@include color-box(1px, black);
+}

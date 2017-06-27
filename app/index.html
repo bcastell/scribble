@@ -3,7 +3,6 @@
 	<head>
 		<title>Scribble</title>
 		<!--build:css css/styles.min.css-->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed">
@@ -13,14 +12,14 @@
 		<div class="container">
 			<div class="row header">
 				<div class="col-md-1">
-					<img src="images/logo/pencil.svg" alt="Logo" class="img-responsive center-block top-icon">
+					<img src="images/logo/pencil.svg" alt="Logo" class="img-responsive center-block img-pulldown">
 				</div>
 				<div class="col-md-10">
 					<h1>Scribble</h1>
 					<p class="author">by Brandon Castellanos</p>
 				</div>
 				<div class="col-md-1">
-					<a href="https://github.com/bcastell/scribble" class="git-icon"></a>
+					<a href="https://github.com/bcastell/scribble" class="git"></a>
 				</div>
 			</div>
 			<div class="row header-line"></div>
@@ -76,7 +75,7 @@
 					<div class="tool-break"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<input type="color" name="picker" value="#000000" id="picker">
+							<input type="color" value="#000000" id="color">
 						</div>
 					</div>
 				</div>
@@ -85,7 +84,7 @@
 					<div class="tool-break"></div>
 					<div class="row">
 						<div class="col-md-12">
-							<input type="number" id="size" class="size-picker">
+							<input type="number" id="size">
 							<label for="size">px</label>
 						</div>
 					</div>
@@ -95,11 +94,11 @@
 					<div class="tool-break"></div>
 					<div class="row">
 						<div class="col-md-6">
-							<input type="file" name="file" id="open_file" class="choose">
+							<input type="file" id="open_file">
 							<label for="open_file"><span class="open"></span>Choose a file...</label>
 						</div>
 						<div class="col-md-6">
-							<a href="/" id="save_file" class="testing">
+							<a href="/" id="save_file">
 								<span class="save"></span>
 								Save canvas...
 							</a>

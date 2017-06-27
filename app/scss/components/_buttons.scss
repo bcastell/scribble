@@ -1,0 +1,59 @@
+.git {
+	width: 48px;
+	height: 48px;
+	margin-top: 30px;
+	display: block;
+	@include background($github);
+}
+
+.git:hover {
+	@include background($github-hover);
+}
+
+#open_file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#open_file + label {
+	@include file-outline;
+}
+
+#open_file:focus + label,
+#open_file + label:hover,
+#save_file:focus,
+#save_file:hover {
+	color: white;
+	background-color: $glacier;
+	box-shadow: 0 0 1.5pt 1.5pt $aquamarine;
+}
+
+.open {
+	@include background-image($open-file-off);
+	@include file-button;
+}
+
+label:hover > span,
+#open_file:focus + label > span {
+	@include background-image($open-file-on);
+}
+
+#save_file {
+	@include file-outline;
+	text-decoration: none !important;
+}
+
+.save {
+	@include background-image($save-file-off);
+	@include file-button;
+}
+
+a:hover > span,
+a:focus > span {
+	@include background-image($save-file-on);
+}
+

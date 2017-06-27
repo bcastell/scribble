@@ -1,0 +1,109 @@
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"] + label {
+	height: 24px;
+	width: 24px;
+	display: inline-block;
+	padding: 0 0 0 0px;
+	margin-top: 8px;
+	cursor: pointer;
+}
+
+input[type="radio"] + label.pencil {
+	@include background($draw-off);
+}
+
+input[type="radio"]:checked + label.pencil {
+	@include background($draw-on);
+}
+
+input[type="radio"]:hover + label.pencil {
+	@include background($draw-hover);
+}
+
+input[type="radio"] + label.line {
+	@include background($line-off);
+}
+
+input[type="radio"]:checked + label.line {
+	@include background($line-on);
+}
+
+input[type="radio"]:hover + label.line {
+	@include background($line-hover);
+}
+
+input[type="radio"] + label.erase {
+	@include background($erase-off);
+}
+
+input[type="radio"]:checked + label.erase {
+	@include background($erase-on);
+}
+
+input[type="radio"]:hover + label.erase {
+	@include background($erase-hover);
+}
+
+input[type="radio"] + label.text {
+	@include background($text-off);
+}
+
+input[type="radio"]:checked + label.text {
+	@include background($text-on);
+}
+
+input[type="radio"]:hover + label.text {
+	@include background($text-hover);
+}
+
+input[type="radio"] + label.spray {
+	@include background($spray-off);
+}
+
+input[type="radio"]:checked + label.spray {
+	@include background($spray-on);
+}
+
+input[type="radio"]:hover + label.spray {
+	@include background($spray-hover);
+}
+
+input[type="radio"] + label.fill {
+	@include background($fill-off);
+}
+
+input[type="radio"]:checked + label.fill {
+	@include background($fill-on);
+}
+
+input[type="radio"]:hover + label.fill {
+	@include background($fill-hover);
+}
+
+input[type="radio"] + label.rectangle {
+	@include background($rectangle-off);
+}
+
+input[type="radio"]:checked + label.rectangle {
+	@include background($rectangle-on);
+}
+
+input[type="radio"]:hover + label.rectangle {
+	@include background($rectangle-hover);
+}
+
+input[type="radio"] + label.circle {
+	@include background($circle-off);
+}
+
+input[type="radio"]:checked + label.circle {
+	@include background($circle-on);
+}
+
+input[type="radio"]:hover + label.circle {
+	@include background($circle-hover);
+}
+
