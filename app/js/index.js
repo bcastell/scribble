@@ -261,9 +261,9 @@ function circleFrom(event, dcx, relativeStart) {
 		radiusY : y_radius,
 		centerX : relativeStart.x + x_radius,
 		centerY : relativeStart.y + y_radius,
-		step    : 0.01,
-		arc     : 0.01,
-        twoPI   : Math.PI * 2 - 0.01
+		step    : 0.001,
+		arc     : 0.001,
+        twoPI   : Math.PI * 2
 	};
 }
 
