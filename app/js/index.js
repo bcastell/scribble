@@ -10,35 +10,30 @@ tools.pencil = function(event, cx, onEnd) {
 		pos = relativePos(event, cx.canvas);
 		cx.lineTo(pos.x, pos.y);
 		cx.stroke();
+		cx.closePath();
 	}, onEnd);
 };
 
 tools.line = function(event, cx) {
-	var dcv = document.getElementById("dcv");
-	dcv.style["z-index"] = 0;
-
-	var dcx = dcv.getContext("2d");
-	dcx.lineWidth = document.getElementById("size").value;
-	dcx.fillStyle = document.getElementById("color").value;
-	dcx.strokeStyle = document.getElementById("color").value;
+	var dcx = document.getElementById("dcv").getContext("2d");
+	dcx.canvas.style["z-index"] = 0;
 
 	var relativeStart = relativePos(event, cx.canvas);
-
 	trackDrag(function(event) {
-		dcx.clearRect(0, 0, dcv.width, dcv.height);
+		dcx.clearRect(0, 0, dcx.canvas.width, dcx.canvas.height);
 		dcx.beginPath();
 		dcx.moveTo(relativeStart.x, relativeStart.y);
-		dcx.lineTo(relativePos(event, dcv).x, relativePos(event, dcv).y);
+		dcx.lineTo(relativePos(event, dcx.canvas).x, relativePos(event, dcx.canvas).y);
 		dcx.stroke();
 		dcx.closePath();
 	}, function(event) {
 		cx.beginPath();
 		cx.moveTo(relativeStart.x, relativeStart.y);
-		cx.lineTo(relativePos(event, dcv).x, relativePos(event, dcv).y);
+		cx.lineTo(relativePos(event, dcx.canvas).x, relativePos(event, dcx.canvas).y);
 		cx.stroke();
 		cx.closePath();
-		dcx.clearRect(0, 0, dcv.width, dcv.height);
-		dcv.style["z-index"] = -1;
+		dcx.clearRect(0, 0, dcx.canvas.width, dcx.canvas.height);
+		dcx.canvas.style["z-index"] = -1;
 	});
 };
 
@@ -124,69 +119,55 @@ tools.rectangle = function(event, cx) {
 };
 
 tools.circle = function(event, cx) {
-	var dcv = document.getElementById("dcv");
-	dcv.style["z-index"] = 0;
-
-	var dcx = dcv.getContext("2d");
-	dcx.lineWidth = document.getElementById("size").value;
-	dcx.fillStyle = document.getElementById("color").value;
-	dcx.strokeStyle = document.getElementById("color").value;
-	cx.lineWidth = dcx.lineWidth;
-	cx.fillStyle = dcx.fillStyle;
-	cx.strokeStyle = dcx.strokeStyle;
+	var dcx = document.getElementById("dcv").getContext("2d");
+	dcx.canvas.style["z-index"] = 0;
 
 	var relativeStart = relativePos(event, cx.canvas);
-
 	trackDrag(function(event) {
-		dcx.clearRect(0, 0, dcv.width, dcv.height);
-		var radiusX = (relativePos(event, dcv).x - relativeStart.x) * 0.5;
-		var radiusY = (relativePos(event, dcv).y - relativeStart.y) * 0.5;
-		var centerX = relativeStart.x + radiusX;
-		var centerY = relativeStart.y + radiusY;
-		var step = 0.01;
-		var a = step;
-		var pi2 = Math.PI * 2 - step;
+		dcx.clearRect(0, 0, dcx.canvas.width, dcx.canvas.height);
+
+		var circle = circleFrom(event, dcx, relativeStart);
 
 		dcx.beginPath();
-		dcx.moveTo(centerX + radiusX * Math.cos(0), centerY + radiusY * Math.sin(0));
-		for (; a < pi2; a += step) {
-			dcx.lineTo(centerX + radiusX * Math.cos(a), centerY + radiusY * Math.sin(a));
+		dcx.moveTo(circle.centerX + circle.radiusX * Math.cos(0), circle.centerY + circle.radiusY * Math.sin(0));
+		for (; circle.arc < circle.twoPI; circle.arc += circle.step) {
+			var x = circle.centerX + circle.radiusX * Math.cos(circle.arc);
+			var y = circle.centerY + circle.radiusY * Math.sin(circle.arc);
+			dcx.lineTo(x, y);
 		}
 		dcx.stroke();
 		dcx.closePath();
 	}, function(event) {
-		var radiusX = (relativePos(event, dcv).x - relativeStart.x) * 0.5;
-		var radiusY = (relativePos(event, dcv).y - relativeStart.y) * 0.5;
-		var centerX = relativeStart.x + radiusX;
-		var centerY = relativeStart.y + radiusY;
-		var step = 0.01;
-		var a = step;
-		var pi2 = Math.PI * 2 - step;
+		var circle = circleFrom(event, dcx, relativeStart);
 
 		cx.beginPath();
-		cx.moveTo(centerX + radiusX * Math.cos(0), centerY + radiusY * Math.sin(0));
-		for (; a < pi2; a += step) {
-			cx.lineTo(centerX + radiusX * Math.cos(a), centerY + radiusY * Math.sin(a));
+		cx.moveTo(circle.centerX + circle.radiusX * Math.cos(0), circle.centerY + circle.radiusY * Math.sin(0));
+		for (; circle.arc < circle.twoPI; circle.arc += circle.step) {
+			var x = circle.centerX + circle.radiusX * Math.cos(circle.arc);
+			var y = circle.centerY + circle.radiusY * Math.sin(circle.arc);
+			cx.lineTo(x, y);
 		}
 		cx.stroke();
 		cx.closePath();
-		dcx.clearRect(0, 0, dcv.width, dcv.height);
-		dcv.style["z-index"] = -1;
+		dcx.clearRect(0, 0, dcx.canvas.width, dcx.canvas.height);
+		dcx.canvas.style["z-index"] = -1;
 	});
 };
 
 tools.color = function(cx) {
 	var color = document.getElementById("color");
+	var dcx = document.getElementById("dcv").getContext("2d");
 	color.addEventListener("change", function() {
-		cx.fillStyle = color.value;
-		cx.strokeStyle = color.value;
+		dcx.fillStyle = cx.fillStyle = color.value;
+		dcx.strokeStyle = cx.strokeStyle = color.value;
 	});
 }
 
 tools.size = function(cx) {
 	var size = document.getElementById("size");
+	var dcx = document.getElementById("dcv").getContext("2d");
 	size.addEventListener("change", function() {
-		cx.lineWidth = size.value;
+		dcx.lineWidth = cx.lineWidth = size.value;
 	});
 }
 
@@ -271,6 +252,21 @@ function rectangleFrom(a, b) {
 	};
 }
 
+function circleFrom(event, dcx, relativeStart) {
+	var x_radius = (relativePos(event, dcx.canvas).x - relativeStart.x) * 0.5;
+	var y_radius = (relativePos(event, dcx.canvas).y - relativeStart.y) * 0.5;
+
+	return {
+		radiusX : x_radius,
+		radiusY : y_radius,
+		centerX : relativeStart.x + x_radius,
+		centerY : relativeStart.y + y_radius,
+		step    : 0.01,
+		arc     : 0.01,
+        twoPI   : Math.PI * 2 - 0.01
+	};
+}
+
 function loadImageURL(cx, url) {
 	var image = document.createElement("img");
 	image.addEventListener("load", function() {
@@ -285,12 +281,18 @@ function loadImageURL(cx, url) {
 	image.src = url;
 }
 
-function scribble() {
+function initMenu(cx) {
+	tools["color"](cx);
+	tools["size"](cx);
+	tools["open_file"](cx);
+	tools["save_file"](cx);
+}
+
+(function() {
 	var cx = document.getElementById("cv").getContext("2d");
 	cx.canvas.addEventListener("mousedown", function(event) {
 		for (var tool in tools) {
 			var input = document.getElementById(tool);
-
 			if (input) {
 				if (input.type != "radio")
 					tools[tool](cx);
@@ -302,11 +304,6 @@ function scribble() {
 			}
 		}
 	});
-	tools["color"](cx);
-	tools["open_file"](cx);
-	tools["size"](cx);
-	tools["save_file"](cx);
-}
-
-scribble();
+	initMenu(cx);
+})();
 
