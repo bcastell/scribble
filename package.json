@@ -1,7 +1,7 @@
 {
   "name": "scribble",
   "version": "1.0.0",
-  "description": "",
+  "description": "HTML5-Canvas Drawing Application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
