@@ -1,17 +1,11 @@
-![alt text](./app/images/media/logo.png)
-![alt text](./app/images/media/title.png)
+<p align="center"><img width=12.5% src="https://github.com/bcastell/scribble/blob/master/app/images/media/logo.png"></p>
+<p align="center"><img width=60% src="https://github.com/bcastell/scribble/blob/master/app/images/media/title.png"></p>
+<br>
+<h4 align="center">A computer graphics application built with HTML5-Canvas.</h4>
 
-----
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-#### A computer graphics application built with HTML5-Canvas.
-
-![screenshot](./app/images/media/demo.gif)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![screenshot](https://github.com/bcastell/scribble/blob/master/app/images/media/demo.gif)
 
 ## Key Features
-----
-
 * Tools
 	- Pencil
 	- Line
@@ -29,7 +23,6 @@
 	- Save Canvas
 
 ## Getting Started
-----
 To run this application on a local server, follow the instructions below.
 
 ### Clone Repository
@@ -62,9 +55,7 @@ gulp
 Your default browser should open a new window with the application running.
 
 ## Authors
-----
 * **Brandon Castellanos** - [GitHub](https://github.com/bcastell)
 
 ## License
-----
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
