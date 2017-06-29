@@ -1,7 +1,9 @@
 <h1 align="center">
 	<br>
-	<p align="center"><img width=12.5% src="https://github.com/bcastell/scribble/blob/master/app/images/media/logo.png"></p>
-	<p align="center"><img width=60% src="https://github.com/bcastell/scribble/blob/master/app/images/media/title.png"></p>
+	<span>
+		<img width=8% src="https://github.com/bcastell/scribble/blob/master/app/images/media/logo.png">
+		<img width=35% src="https://github.com/bcastell/scribble/blob/master/app/images/media/title.png">
+	</span>
 </h1>
 
 <h4 align="center">A computer graphics application built with HTML5-Canvas.</h4>
@@ -30,7 +32,7 @@ To run this application on a local server, follow the instructions below.
 
 ### Installation
 ##### Node.js
-Ensure Node.js is installed. It can be downloaded [here](https://nodejs.org/en/).
+Install Node.js [here](https://nodejs.org/en/).
 &nbsp;
 ##### Gulp
 Install Gulp globally.
@@ -38,8 +40,8 @@ Install Gulp globally.
 sudo npm install gulp -g
 ```
 
-### Clone Repository
-Copy the repository to your machine.
+### Clone
+Clone the repository.
 ```python
 git clone https://github.com/bcastell/scribble
 ```
@@ -51,11 +53,10 @@ cd location/where/repository/is/saved/scribble
 ```
 
 ### Start Server
-Run the following command to spin up a server.
+Spin up a server on your computer to launch the application.
 ```python
 gulp
 ```
-Your default browser should open a new window with the application running.
 
 ## Authors
 * **Brandon Castellanos** - [GitHub](https://github.com/bcastell)
