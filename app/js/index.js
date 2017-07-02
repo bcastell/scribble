@@ -288,6 +288,16 @@ function initMenu(cx) {
 	tools["save_file"](cx);
 }
 
+function defaults(cx) {
+	var size = document.getElementById("size");
+	var dcx = document.getElementById("dcv").getContext("2d");
+
+	size.value = 1;
+	dcx.lineWidth = cx.lineWidth = size.value;
+
+	document.getElementById("pencil").checked = true;
+}
+
 (function() {
 	var cx = document.getElementById("cv").getContext("2d");
 	cx.canvas.addEventListener("mousedown", function(event) {
@@ -305,5 +315,6 @@ function initMenu(cx) {
 		}
 	});
 	initMenu(cx);
+	defaults(cx);
 })();
 
