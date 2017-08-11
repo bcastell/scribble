@@ -9,7 +9,7 @@
 <h4 align="center">A computer graphics application built with HTML5-Canvas.</h4>
 
 <h2 align="center">
-	<a href="https://bcastell.github.io/scribble">DRAW</a>
+	<a href="https://bcastell.github.io/scribble/">DRAW</a>
 </h2>
 
 ![screenshot](images/media/demo.gif)
