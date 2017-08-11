@@ -1,14 +1,18 @@
 <h1 align="center">
 	<br>
 	<span>
-		<img width=8% src="https://github.com/bcastell/scribble/blob/master/app/images/media/logo.png">
-		<img width=35% src="https://github.com/bcastell/scribble/blob/master/app/images/media/title.png">
+		<img width=8% src="images/media/logo.png">
+		<img width=35% src="images/media/title.png">
 	</span>
 </h1>
 
 <h4 align="center">A computer graphics application built with HTML5-Canvas.</h4>
 
-![screenshot](https://github.com/bcastell/scribble/blob/master/app/images/media/demo.gif)
+<h2 align="center">
+	<a href="https://bcastell.github.io/scribble">DRAW</a>
+</h2>
+
+![screenshot](images/media/demo.gif)
 
 ## Key Features
 * Tools
